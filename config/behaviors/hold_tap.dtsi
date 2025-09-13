@@ -1,0 +1,52 @@
+/*
+Hold-tap configuration for home row mods
+- Uses tap-preferred flavor to prioritize character output
+- 220ms tapping term balances hold/tap detection
+- 150ms quick-tap allows fast repeated taps
+- Global quick-tap enables consistent behavior across all keys
+*/
+// Define a new hold-tap behavior named "ht"
+ht: hold_tap {
+    // Label for identification
+    label = "hold_tap";
+    // Specify this is a ZMK hold-tap behavior
+    compatible = "zmk,behavior-hold-tap";
+    // Number of binding parameters required (hold binding and tap binding)
+    #binding-cells = <2>;
+    bindings = <&kp>, <&kp>;
+    // Prefer tap action over hold when timing is ambiguous
+    flavor = "tap-preferred";
+    // Time in milliseconds to determine between tap and hold (220ms)
+    tapping-term-ms = <220>;
+    // Allow quick tap within 150ms to repeat the tap action
+    quick-tap-ms = <150>;
+};
+
+/*
+Comportement personnalisé pour la virgule
+- Tap normal : ,
+- Shift + tap : ;
+*/
+comma_semi: comma_semicolon {
+    compatible = "zmk,behavior-mod-morph";
+    label = "COMMA_SEMICOLON";
+    #binding-cells = <0>;
+    bindings = <&kp FR_COMA>, <&kp FR_SCLN>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+dot_colon: dot_colon {
+    compatible = "zmk,behavior-mod-morph";
+    label = "DOT_COLON";
+    #binding-cells = <0>;
+    bindings = <&kp FR_DOT>, <&kp FR_COLN>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+excl_ques: excl_ques {
+    compatible = "zmk,behavior-mod-morph";
+    label = "EXCL_QUESTION";
+    #binding-cells = <0>;
+    bindings = <&kp FR_EXCL>, <&kp FR_QUES>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};

@@ -1,0 +1,52 @@
+raise_layer {
+      display-name = "Raise";
+      bindings = <
+//╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+//│  ESC     │  Z       │  J       │  O       │  B       │  !?      │   │  (       │  7       │  8       │  9       │  -       │ /
+ &kp ESC    &kp FR_Z   &kp FR_J   &kp FR_O   &kp FR_B   &excl_ques     &kp FR_LPRN   &kp FR_7   &kp FR_8   &kp FR_9   &kp FR_MINS   &kp FR_SLSH
+//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+//│  TAB     │  A       │  I       │  E       │  U       │  ,       │   │  )       │  4       │  5       │  6       │  +       │  *       │
+ &kp TAB    &kp FR_A   &kp FR_I   &kp FR_E   &kp FR_U   &comma_semi    &kp FR_RPRN   &kp FR_4   &kp FR_5   &kp FR_6   &kp FR_PLUS   &kp FR_ASTR
+//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+//│  ⇧       │  K       │  Y       │  Q       │  W       │  .       │   │  0       │ 1        │ 2        │ 3        │  =       │  %       │
+ &kp LSHFT  &kp FR_K   &kp FR_Y   &kp FR_Q   &kp FR_W   &dot_colon     &kp FR_0   &kp FR_1   &kp FR_2   &kp FR_3   &kp FR_4   &kp FR_PERC
+//╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+//                                 |          |          |          |   |          |          |          |                                  
+                                &trans     &trans     &trans         &trans     &trans     &trans
+//                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+      >;
+};
+
+//                 raise_layer {
+// // -----------------------------------------------------------------------------------------
+// // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+// //                    | GUI |     | SPC |   | ENT |     | ALT |
+//                         display-name = "Raise";
+//                         bindings = <
+//    &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
+//    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
+//    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
+//                     	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+//                         >;
+//                 };
+
+        // left_layer {
+        //     display-name = "v Lower v";
+        //     bindings = <
+        // //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+        // //│          │  &       │  é       │  "       │  '       │  (       │   │  )       │  è       │  !       │  ç       │  à       │          │
+        //     &trans      &kp N1     &kp N2     &kp N3     &kp N4     &kp N5        &kp MINUS   &kp N7     &kp N8     &kp N9     &kp N0     &trans
+        // //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        // //│          │  `       │  /       │  #       │  @       │  {       │   │  }       │   _      │ ^        │  |       │  $       │          │
+        //     &trans      HRML(BSLH, LS(DOT),   LS(NUBS),  NUBS)     &kp RA(N5)  &kp RA(MINUS) HRMR(LS(EQUAL), LBKT,  RSA(L),    RBKT)      &trans
+        // //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        // //│          │  ù       │  \       │   <      │  >       │  [       │   │  ]       │  ~       │  %       │   °      │  €       │          │
+        //     &trans    &kp SQT &kp RSA(DOT) &kp GRAVE &kp LS(GRAVE) &kp RSA(N5) &kp RSA(MINUS) &kp RA(N) &kp LS(SQT) &kp LS(MINUS) &kp RA(RBKT) &trans
+        // //╰──────────┴──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────┴──────────╯
+        //                                       &trans     &trans     &trans         &trans     &trans     &trans
+        // //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+        //     >;
+        // };
+

@@ -1,0 +1,8 @@
+file_format: "1"
+id: nice-futurama-sus
+name: nice!view_futurama_sus
+type: shield
+url: https://nicekeyboards.com/nice-view
+requires: [nice_view_header]
+features:
+  - display
